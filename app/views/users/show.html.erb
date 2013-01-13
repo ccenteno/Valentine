@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre del Enamorado:</b>
+  <%= @user.name %>
+</p>
+
+<table>
+	<caption>Regalos</caption>
+	<% @user.gifts.each do |gift| %>
+		<tr>
+			<td><%=gift.description %> </td>
+		</tr>
+	<% end %>
+</table>
+<p></p>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Regresar', users_path %> |
+<%= link_to 'Google', "http://www.google.com" %>

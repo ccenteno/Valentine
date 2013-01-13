@@ -1,0 +1,26 @@
+<h1>Listado de regalos</h1>
+
+<table border=0>
+  <tr>
+    <th>Descripcion</th>
+    <th>Usuario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gifts.each do |gift| %>
+  <tr border=1>
+    <td><%= gift.description %></td>
+    <td><%= gift.user.name %> </td>
+    <td><%= link_to 'Mostrar', gift %></td>
+    <td><%= link_to 'Editar', edit_gift_path(gift) %></td>
+    <td><%= link_to 'Eliminar', gift, confirm: 'Esta Ud. seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Regalo', new_gift_path %> |
+<%= link_to 'Ver Usuarios', users_path %>
